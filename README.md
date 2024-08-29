@@ -7,9 +7,10 @@ The jar is already built and packaged. You just need to perform below steps to r
 
 Go to Project root
 
-`$ cd cronparser/`
-
-`$ java -jar cronparser-1.0.jar "<expression>"`
+```
+$ cd cronparser/
+$ java -jar cronparser-1.0.jar "<expression>"
+```
 
 `expression`should be passed in this format : [minute] [hour] [day of month] [month] [day of week] [command]
 
