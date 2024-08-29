@@ -9,7 +9,7 @@ Go to Project root
 
 `$ cd cronparser/`
 
-`$ java -jar cron-parser-deliveroo-1.0.jar "<expression>"`
+`$ java -jar cronparser-1.0.jar "<expression>"`
 
 `expression`should be passed in this format : [minute] [hour] [day of month] [month] [day of week] [command]
 
