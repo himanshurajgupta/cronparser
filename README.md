@@ -29,3 +29,25 @@ month         1 2 3 4 5 6 7 8 9 10 11 12
 day of week   1 2 3 4 5
 command       /usr/bin/find
 ```
+
+### [Optional] Running the application as Webapp
+
+Just run one command and the application can run as webapp
+
+You can hit the endpoint through curl http://localhost:8080/parse
+
+```
+$ java -jar cronparser-1.0.jar
+$ curl --get --data-urlencode "expression=*/15 0 1-15 * 1-5 /usr/bin/find" http://localhost:8080/parse
+```
+
+Output of curl command
+
+```
+minute        0 15 30 45
+hour          0
+day of month  1 15
+month         1 2 3 4 5 6 7 8 9 10 11 12
+day of week   1 2 3 4 5
+command       /usr/bin/find
+```
