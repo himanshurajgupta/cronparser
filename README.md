@@ -1,6 +1,6 @@
 ### Building the application
 This is a maven project. The project is built using `mvn clean package` command. A jar named `cronparser-1.0.jar` should be created in `target/` folder.
-For the sake of simplicity I have already done this step and jar is available in project root directory.
+For the sake of simplicity I have already done this step and jar is available in project root directory. 
 
 ### Running the application
 The jar is already built and packaged. You just need to perform below steps to run the application.
@@ -8,7 +8,7 @@ The jar is already built and packaged. You just need to perform below steps to r
 Go to Project root
 
 ```
-$ cd cronparser/
+$ cd target/
 $ java -jar cronparser-1.0.jar "<expression>"
 ```
 
@@ -37,8 +37,9 @@ command       /usr/bin/find
 Just run one command and the application can run as webapp
 
 You can hit the endpoint through curl http://localhost:8080/parse
-
+Go to project root
 ```
+$ cd target/
 $ java -jar cronparser-1.0.jar
 $ curl --get --data-urlencode "expression=*/15 0 1-15 * 1-5 /usr/bin/find" http://localhost:8080/parse
 ```
