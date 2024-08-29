@@ -30,7 +30,7 @@ month         1 2 3 4 5 6 7 8 9 10 11 12
 day of week   1 2 3 4 5
 command       /usr/bin/find
 ```
-`Tests present inside tests folder under src/main/tests/`
+`Tests present inside tests folder under src/main/test/`
 
 ### [Optional] Running the application as Webapp
 
@@ -41,6 +41,10 @@ Go to project root
 ```
 $ cd target/
 $ java -jar cronparser-1.0.jar
+By above command webapp starts running on port 8080
+```
+
+```
 $ curl --get --data-urlencode "expression=*/15 0 1-15 * 1-5 /usr/bin/find" http://localhost:8080/parse
 ```
 
