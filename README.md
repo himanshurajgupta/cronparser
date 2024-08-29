@@ -36,8 +36,9 @@ command       /usr/bin/find
 
 Just run one command and the application can run as webapp
 
-You can hit the endpoint through curl http://localhost:8080/parse
-Go to project root
+You can hit the endpoint through curl command at http://localhost:8080/parse
+
+Go to project root and execute below commands
 ```
 $ cd target/
 $ java -jar cronparser-1.0.jar
