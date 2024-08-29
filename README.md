@@ -1,6 +1,6 @@
 ### Building the application
 This is a maven project. The project is built using `mvn clean package` command. A jar named `cronparser-1.0.jar` should be created in `target/` folder.
-For the sake of simplicity I have already done this step and jar is available in project root directory. 
+For the sake of simplicity I have already done this step and jar is available in `target` directory. 
 
 ### Running the application
 The jar is already built and packaged. You just need to perform below steps to run the application.
