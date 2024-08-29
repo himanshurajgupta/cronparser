@@ -59,3 +59,12 @@ month         1 2 3 4 5 6 7 8 9 10 11 12
 day of week   1 2 3 4 5
 command       /usr/bin/find
 ```
+
+### Tests of the Application
+Total 35 test cases has been written using Junit and Mockito
+`Tests present inside tests folder under src/main/test/`
+
+Test cases can be run using below command
+```
+$ mvn test
+```
