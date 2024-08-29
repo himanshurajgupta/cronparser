@@ -18,7 +18,8 @@ Example: `*/15 0 1,15 * 1-5 /usr/bin/find`
 
 Sample command to run the application
 
-`java -jar cron-parser-deliveroo-1.0.jar "*/15 0 1,15 * 1-5 /usr/bin/find"`
+`java -jar cronparser-1.0.jar "*/15 0 1,15 * 1-5 /usr/bin/find"`
+
 
 Sample output of the application
 ```
@@ -29,6 +30,7 @@ month         1 2 3 4 5 6 7 8 9 10 11 12
 day of week   1 2 3 4 5
 command       /usr/bin/find
 ```
+`Tests present inside tests folder under src/main/tests/`
 
 ### [Optional] Running the application as Webapp
 
