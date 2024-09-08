@@ -5,6 +5,8 @@ import com.example.cronparser.exception.InvalidCronExpressionException;
 import com.example.cronparser.service.*;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
+
 
 @Service
 public class CronFieldParserManager {
@@ -29,7 +31,7 @@ public class CronFieldParserManager {
     }
     public String parse(String expression) {
         String[] fields = expression.split(" ");
-        if (fields.length != 6) {
+        if (fields.length < CommonConstants.CRON_STRING_MIN_LENGTH) {
             throw new RuntimeException("Invalid cron string. Expected 5 time fields and a command.");
         }
 
@@ -39,7 +41,7 @@ public class CronFieldParserManager {
         result.append(formatField(CommonConstants.DAY_OF_MONTH, fields[2]));
         result.append(formatField(CommonConstants.MONTH, fields[3]));
         result.append(formatField(CommonConstants.DAY_OF_WEEK, fields[4]));
-        result.append(formatField(CommonConstants.COMMAND, fields[5]));
+        result.append(formatField(CommonConstants.COMMAND, String.join(" ", Arrays.copyOfRange(fields, 5, fields.length))));
         return result.toString();
     }
 
