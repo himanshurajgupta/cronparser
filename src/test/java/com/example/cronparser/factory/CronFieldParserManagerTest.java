@@ -53,4 +53,25 @@ class CronFieldParserManagerTest {
         });
         assertEquals("Invalid cron string. Expected 5 time fields and a command.", exception.getMessage());
     }
+    @Test
+    void testParseInvalidHour() {
+        RuntimeException exception = assertThrows(RuntimeException.class, () -> {
+            manager.parse("7aa 0 1-15 * 1-5 echo Hello World");
+        });
+        assertEquals("Invalid number format: 7aa", exception.getMessage());
+    }
+    @Test
+    void testParseMultipleAsterisk() {
+        RuntimeException exception = assertThrows(RuntimeException.class, () -> {
+            manager.parse("7 0 1-15 ** 1-5 echo Hello World");
+        });
+        assertEquals("Invalid number format: **", exception.getMessage());
+    }
+    @Test
+    void testParseInvalidStepFormat() {
+        RuntimeException exception = assertThrows(RuntimeException.class, () -> {
+            manager.parse("2/*15 0 1-15 ** 1-5 echo Hello World");
+        });
+        assertEquals("Invalid step format: 2/*15", exception.getMessage());
+    }
 }

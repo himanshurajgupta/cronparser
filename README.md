@@ -61,10 +61,54 @@ command       /usr/bin/find
 ```
 
 ### Tests of the Application
-Total 35 test cases has been written using Junit and Mockito
+Total 38 test cases has been written using Junit and Mockito
 `Tests present inside tests folder under src/main/test/`
 
 Test cases can be run using below command
 ```
 $ mvn test
 ```
+### Valid string examples
+```
+$ java -jar cronparser-1.0.jar "2/7 0 1,15 * 1-5 /usr/bin/find"
+
+minute         2 9 16 23 30 37 44 51 58
+hour           0
+day of month   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+month          1 2 3 4 5 6 7 8 9 10 11 12
+day of week    1 2 3 4 5
+command        echo Hello World
+```
+```
+$ java -jar cronparser-1.0.jar "33,45,56 0 1-15 * 1-5 echo Hello World"
+
+minute         33 45 56
+hour           0
+day of month   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+month          1 2 3 4 5 6 7 8 9 10 11 12
+day of week    1 2 3 4 5
+command        echo Hello World
+
+```
+
+### Invalid String Examples
+```
+$ java -jar cronparser-1.0.jar "7aa 0 1,15 * 1-5 /usr/bin/find"
+
+Invalid number format: 7aa
+
+```
+```
+$ java -jar cronparser-1.0.jar "2*/15 0 1,15 * 1-5 /usr/bin/find"
+
+Invalid step format: 2*/15
+```
+
+```
+$ java -jar cronparser-1.0.jar "7 0 1,15 ** 1-5 /usr/bin/find"
+
+Invalid number format: **
+```
+
+
+
