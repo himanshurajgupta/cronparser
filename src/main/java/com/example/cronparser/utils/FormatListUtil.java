@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringJoiner;
 
+import static java.util.Collections.swap;
+
 public class FormatListUtil {
     public static String formatList(List<Integer> list) {
         StringJoiner joiner = new StringJoiner(" ");
@@ -35,9 +37,9 @@ public class FormatListUtil {
         String[] numbers = range.split("-");
         int start = Integer.parseInt(numbers[0]);
         int end = Integer.parseInt(numbers[1]);
-        if (start > end || start < minValue || end > maxValue) {
-            throw new InvalidCronExpressionException("Range out of bounds: " + range);
-        }
+//        if (start > end || start < minValue || end > maxValue) {
+//            throw new InvalidCronExpressionException("Range out of bounds: " + range);
+//        }
     }
 
     // Validate that a step is numeric and within bounds
@@ -74,6 +76,14 @@ public class FormatListUtil {
             String[] range = part.split("-");
             int start = Integer.parseInt(range[0]);
             int end = Integer.parseInt(range[1]);
+            if(start > end) {
+                for(int i = start; i <= max; i++) {
+                    result.add(i);
+                }
+                for(int i = min; i <=end; i++) {
+                    result.add(i);
+                }
+            }
             for (int i = start; i <= end; i++) {
                 result.add(i);
             }

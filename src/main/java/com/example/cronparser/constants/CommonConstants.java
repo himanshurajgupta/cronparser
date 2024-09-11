@@ -10,5 +10,6 @@ public interface CommonConstants {
     String MONTH = "month";
     String DAY_OF_WEEK = "day of week";
     String COMMAND = "command";
+    String YEAR = "year";
     int CRON_STRING_MIN_LENGTH = 6;
 }
